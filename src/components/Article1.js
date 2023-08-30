@@ -110,7 +110,7 @@ const Article = () => {
           <span><b>How to build a successfully business in Nigeria</b></span><br></br>
           <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis urna imperdiet netus nibh at fermentum mattis. Amet adipiscing</span>
         </div>
-        <div className='new-Article'><button><b>Load more Articles</b></button></div><hr></hr>
+        <div className='new-Article'><button><b>Load more Articles</b></button></div>
       </div>
       <footer>
         <div>
