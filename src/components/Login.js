@@ -11,12 +11,13 @@ const Login = () => {
         navigate('/register');
     };
 
-    const [username, setUsername] = useState('');
+    // const [username, setUsername] = useState('');
+    const [email, SetUserEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
+    // const [errorMessage, setErrorMessage] = useState('');
 
     const handleLogin = () => {
-        const storedUser = localStorage.getItem(username);
+        const storedUser = localStorage.getItem(email);
         if (storedUser) {
             const storedPassword = JSON.parse(storedUser).password;
             if (storedPassword === password) {
@@ -24,7 +25,7 @@ const Login = () => {
                 // setErrorMessage('');
                 navigate('/home');
             } else {
-            alert('Invalid credentials');
+                alert('Invalid credentials');
             }
         } else {
             alert('User not found,Kindly register');
@@ -46,26 +47,30 @@ const Login = () => {
                 <form >
                     <button>sign in with google</button>
                     <h3>or</h3>
-                    <input
+                    {/* <input
                         type="text"
                         placeholder="Username"
                         value={username}
+                        required
                         onChange={(e) => setUsername(e.target.value)}
+                    /> */}
+                    <input
+                        type='email'
+                        placeholder='EmailAddress'
+                        pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i'
+                        value={email}
+                        required
+                        onChange={(e) => SetUserEmail(e.target.value)}
                     />
-                    {/* <input
-            type='email'
-            placeholder='EmailAddress'
-            value={email}
-            onChange={(e) => SetUserEmail(e.target.value)}
-          /> */}
                     <input
                         type="password"
                         placeholder="Password"
                         value={password}
+                        required
                         onChange={(e) => setPassword(e.target.value)}
                     />
                     <a href="#">Forgot Password?</a>
-                    <button  onClick={handleLogin}>Login</button>
+                    <button onClick={handleLogin}>Login</button>
                     {/* {errorMessage &&
                      <p>{errorMessage}</p>} */}
                     <div>

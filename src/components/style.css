@@ -54,8 +54,8 @@ a:hover {
 
 form {
     display: inline-grid;
-    row-gap: 20px;
-    margin-top: 60px;
+    row-gap: 15px;
+    margin-top: 30px;
 
 }
 
@@ -103,7 +103,7 @@ img {
 }
 
 .form-cls h2 {
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
 .form-cls p,
@@ -185,4 +185,7 @@ footer {
 
 .icon-container {
     text-align: center;
+}
+li{
+    text-align:start;
 }

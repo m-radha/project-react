@@ -4,6 +4,7 @@ import { Posts } from './assets/local-storage/local-storage';
 import Home from "./components/Home";
 import Register from './components/Register';
 import Login from './components/Login';
+import Password from './components/Password';
 
 function App() {
   return (
