@@ -189,3 +189,15 @@ footer {
 li{
     text-align:start;
 }
+#share {
+    height: 10px;
+}
+#profile_icon{
+    width: 5%;
+    height: 20%;
+}
+.share {
+    display: flex;
+    width: 6%;
+    padding: 10px 10px;
+}

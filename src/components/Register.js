@@ -55,16 +55,58 @@ const Register = () => {
     setIsValid(name.trim() !== '' && email.trim() !== '' && url.trim() !== '' && password.trim() !== '' && confirmPassword.trim() !== '');
   };
 
+  // Regular expressions for validation
+  const usernameRegex = /^[a-zA-Z0-9_]{3,20}$/; // Allows letters, numbers, and underscores, 3-20 characters
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email format validation
+  const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/; // Requires 8 characters, at least one digit, one lowercase, and one uppercase letter
 
+  let userArray = JSON.parse(localStorage.getItem('userArray')) || [];
 
+  // const userList=[];
   const handleRegister = () => {
-    const newUser = {
-      email,
-      password,
-    };
-    localStorage.setItem(email, JSON.stringify(newUser));
-    setSuccessMessage('Registration successful');
-  };
+    // Validate the form data
+    if (usernameRegex.test(username) && emailRegex.test(email) && passwordRegex.test(password)) {
+      // Data is valid
+
+      // Store the data in localStorage or perform other actions
+      const userData = {
+        username,
+        email,
+        password,
+      };
+
+      userArray.push(userData);
+      localStorage.setItem('userArray', JSON.stringify(userArray));
+      // const jsonString = JSON.stringify(userData);
+      // localStorage.setItem('userList', jsonString);
+      setSuccessMessage('Registration successful');
+      navigate('/login');
+      console.log('Data successfully stored in localStorage.');
+    } else {
+      // Data did not pass validation
+      console.error('Please check your input for each field:');
+      if (!usernameRegex.test(username)) {
+        console.error('Username must be 3-20 characters and can only contain letters, numbers, and underscores.');
+      }
+      if (!emailRegex.test(email)) {
+        console.error('Invalid email address.');
+      }
+      if (!passwordRegex.test(password)) {
+        console.error('Password must be at least 8 characters and contain at least one digit, one lowercase, and one uppercase letter.');
+      }
+    }
+  }
+
+
+
+  // const handleRegister = () => {
+  //   const newUser = {
+  //     email,
+  //     password,
+  //   };
+  //   localStorage.setItem(email, JSON.stringify(newUser));
+  //   setSuccessMessage('Registration successful');
+  // };
 
 
 
@@ -122,6 +164,7 @@ const Register = () => {
 
           <input
             type="text"
+            id='username'
             placeholder="Username"
             value={username}
             onChange={handleNameChange}
@@ -129,6 +172,7 @@ const Register = () => {
           />
           <input
             type='email'
+            id='email'
             placeholder='EmailAddress'
             value={email}
             onChange={handleEmailChange}
@@ -144,6 +188,7 @@ const Register = () => {
           <input
             type="password"
             placeholder="Password"
+            id='password'
             value={password}
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
             title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
@@ -153,9 +198,10 @@ const Register = () => {
 
           <input
             type="password"
+            id='password'
             placeholder="ConfirmPassword"
             value={confirmPassword}
-            minlength="8"
+            // minlength="8"
             onChange={handleConfirmPasswordChange}
             required
           />

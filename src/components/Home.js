@@ -7,17 +7,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import picture1 from '../Images/picture1.png';
 import pic2 from '../Images/pic2.png';
-import pic3 from '../Images/pic3.png';
-import pic4 from '../Images/pic4.png';
-import pic5 from '../Images/pic5.png';
-import pic6 from '../Images/pic6.png';
-import pic7 from '../Images/pic7.png';
-import pic8 from '../Images/pic8.png';
-import pic9 from '../Images/pic9.png';
-import pic10 from '../Images/pic10.png';
-import pic11 from '../Images/pic11.png';
-import pic12 from '../Images/pic12.png';
-import pic13 from '../Images/pic13.png';
+
 
 const Home = () => {
   var article = JSON.parse(localStorage.getItem("articles") || "{}");

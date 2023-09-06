@@ -5,11 +5,13 @@ import Home from "./components/Home";
 import Register from './components/Register';
 import Login from './components/Login';
 import Password from './components/Password';
+import Article from "./components/Article";
 
 function App() {
   return (
     <div className="App">
-      <Posts></Posts>
+      <Article></Article>
+      {/* <Posts></Posts>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Register />} />
@@ -17,7 +19,7 @@ function App() {
           <Route path="register" element={<Register />} />
           <Route path="login" element={<Login />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </div>
   );
 }

@@ -17,19 +17,22 @@ const Login = () => {
     // const [errorMessage, setErrorMessage] = useState('');
 
     const handleLogin = () => {
-        const storedUser = localStorage.getItem(email);
-        if (storedUser) {
-            const storedPassword = JSON.parse(storedUser).password;
-            if (storedPassword === password) {
-                // Implement successful login behavior
-                // setErrorMessage('');
-                navigate('/home');
-            } else {
-                alert('Invalid credentials');
-            }
-        } else {
-            alert('User not found,Kindly register');
+        const abc=JSON.parse(localStorage.getItem('userArray'));
+        // console.log(abc)
+        const isPresent = abc.find((item)=>item.email===email)
+        if (!isPresent) {
+            alert('user not found')
         }
+        else{
+            if(isPresent.password===password)
+            {
+                navigate('/home');
+            } else { 
+                alert('Invalid password');
+            }
+        }
+           
+         
     };
 
     return (
