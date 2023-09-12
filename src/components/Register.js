@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import './style.css';
 import RegImg from '../Images/RegImg.png';
 import { useNavigate } from "react-router-dom";
+import GooglIcon from '../Images/icons8-google.svg';
 
 const Register = () => {
-
   const navigate = useNavigate();
-
   const handleLoginButtonClick1 = () => {
     navigate('/login');
   };
@@ -207,12 +206,16 @@ const Register = () => {
           />
 
 
-          <button onClick={handleRegister} disabled={!isValid}>Create on Account</button>
+          <button onClick={handleRegister} disabled={!isValid} style={{ backgroundColor: !isValid ? '#bbb6b6' : ' #2F2E41', color: '#fff', border: 'none', padding: '10px 20px', borderRadius: 5 }}>Create on Account</button>
           {successMessage && <p>{successMessage}</p>}
-          <button>sign in with google</button>
+          {/* <button style={{ display: 'flex', alignItems: 'center',padding:'5px 10px',marginRight:20,borderRadius:5}}>
+                        <img src={GooglIcon} alt="Sign in with Google" style={{height:20,marginRight:5}}/>
+                        Sign in with Google
+                    </button> */}
+          <button style={{ display: 'flex', alignItems: 'center', padding: '5px 10px', borderRadius: 5 }}><img src={GooglIcon} alt="Sign in with Google" style={{ height: 20, marginRight: 5, marginLeft: 25 }} />Sign in with Google</button>
           <div>
             <span>Already have on account?</span>
-            <button onClick={handleLoginButtonClick1}>Login</button>
+            <button onClick={handleLoginButtonClick1} style={{ marginLeft: 10 }}>Login</button>
           </div>
         </form>
       </div>

@@ -1,5 +1,3 @@
-
-
 export function Posts() {
   var Posts = [
     {
@@ -314,5 +312,5 @@ export function Posts() {
     localStorage.setItem("articles", JSON.stringify(Posts));
   }
 
-  return <h1/>;
+  return <h1 />;
 }

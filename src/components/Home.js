@@ -1,12 +1,15 @@
 import React from 'react';
 import '../components/style.css';
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Paper } from "@mui/material";
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import picture1 from '../Images/picture1.png';
 import pic2 from '../Images/pic2.png';
+import { Link } from 'react-router-dom';
+import Like from './like/like';
+import Comment from './comment/comment';
 
 
 const Home = () => {
@@ -18,9 +21,9 @@ const Home = () => {
     <div>
       <div className='nav'>
         <span className='nav-span'>SkillupAfrica Blog</span>
-        <a href='#'>Home</a>
-        <a href='#'>Articles</a>
-        <a href='#'>About us</a>
+        <Link to="home">Home</Link>
+        <Link to="article">Article</Link>
+        <Link to="#">About us</Link>
         <FacebookRoundedIcon className='icon'></FacebookRoundedIcon>
         <TwitterIcon className='icon'></TwitterIcon>
         <InstagramIcon className='icon'></InstagramIcon>
@@ -35,56 +38,62 @@ const Home = () => {
           <button>Read more</button>
         </div>
       </div>
-      <div className='Latest-Articles'>
-        <h1>Latest Articles</h1>
-        <hr></hr>
-        <Grid container spacing={4}>
-          {art1.map((item, index) => {
-            return (
-              <Grid item xs={12} sm={6} md={6} lg={4} display="flex" direction='column' key={index}>
-                <Box
-                  style={{
-                    height: "320px",
-                    backgroundImage: `url(${item.url})`,
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                  }}
-                />
-                <h1>{item.title}</h1>
-                <p>{item.description}</p>
+      <div className='all-art-container' style={{padding:'30px 30px'}}>
+        <div className='Latest-Articles'>
+          <h1>Latest Articles</h1>
+          <hr></hr>
 
-              </Grid>
-            )
-          })}
-        </Grid>
-        <div className='new-Article'><button><b>Load more Articles</b></button></div><hr></hr>
-      </div>
+          <Grid container spacing={4}>
+            {art1.map((item, index) => {
+              return (
+                <Grid item xs={12} sm={6} md={6} lg={4} display="flex" direction='column' key={index} marginTop={5} borderRadius={10}>
+                  <Paper style={{ borderRadius: '10px 10px 10px 10px' }}>
+                    <Box
+                      style={{
+                        height: "320px",
+                        backgroundImage: `url(${item.url})`,
+                        backgroundPosition: "center",
+                        backgroundSize: "cover",
+                      }}
+                    />
+                  </Paper>
+                  <h1>{item.title}</h1>
+                  <p>{item.description}</p>
+                  {/* <Like></Like>
+                  <Comment></Comment> */}
+                </Grid>
+              )
+            })}
+          </Grid>
+          <div className='new-Article'><button><b>Load more Articles</b></button></div><hr></hr>
+        </div>
 
 
-      <div className='Tech-updates'>
-        <h1>Tech Updates</h1>
-        <hr></hr>
-        <Grid container spacing={4}>
-          {art2.map((item, index) => {
-            return (
-              <Grid item xs={12} sm={6} md={6} lg={4} display="flex" direction='column' key={index}>
-                <Box
-                  style={{
-                    height: "320px",
-                    backgroundImage: `url(${item.url})`,
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                  }}
-                />
-                <h1>{item.title}</h1>
-                <p>{item.description}</p>
+        <div className='Tech-updates'>
+          <h1>Tech Updates</h1>
+          <hr></hr>
+          <Grid container spacing={4}>
+            {art2.map((item, index) => {
+              return (
+                <Grid item xs={12} sm={6} md={6} lg={4} display="flex" direction='column' key={index} marginTop={5}>
+                  <Box
+                    style={{
+                      height: "320px",
+                      backgroundImage: `url(${item.url})`,
+                      backgroundPosition: "center",
+                      backgroundSize: "cover",
+                    }}
+                  />
+                  <h1>{item.title}</h1>
+                  <p>{item.description}</p>
 
-              </Grid>
-            )
-          })}
-        </Grid>
+                </Grid>
+              )
+            })}
+          </Grid>
 
-        <div className='new-Article'><button><b>Load more Articles</b></button></div>
+          <div className='new-Article'><button><b>Load more Articles</b></button></div>
+        </div>
       </div>
       <footer>
         <div>

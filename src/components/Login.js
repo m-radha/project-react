@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import './style.css';
 import LoginImg from '../Images/LoginImg.png';
 import { useNavigate } from "react-router-dom";
-
-
+import GooglIcon from '../Images/icons8-google.svg';
 const Login = () => {
 
     const navigate = useNavigate();
@@ -17,22 +16,21 @@ const Login = () => {
     // const [errorMessage, setErrorMessage] = useState('');
 
     const handleLogin = () => {
-        const abc=JSON.parse(localStorage.getItem('userArray'));
+        const abc = JSON.parse(localStorage.getItem('userArray'));
         // console.log(abc)
-        const isPresent = abc.find((item)=>item.email===email)
+        const isPresent = abc.find((item) => item.email === email)
         if (!isPresent) {
             alert('user not found')
         }
-        else{
-            if(isPresent.password===password)
-            {
+        else {
+            if (isPresent.password === password) {
                 navigate('/home');
-            } else { 
+            } else {
                 alert('Invalid password');
             }
         }
-           
-         
+
+
     };
 
     return (
@@ -48,7 +46,11 @@ const Login = () => {
                 <h2>Welcome Back!</h2>
                 <p>Welcome back, please enter your details</p>
                 <form >
-                    <button>sign in with google</button>
+                    <button style={{ display: 'flex', alignItems: 'center',padding:'5px 10px',borderRadius:5}}>
+                        <img src={GooglIcon} alt="Sign in with Google" style={{height:20,marginRight:5,marginLeft:25}}/>
+                        Sign in with Google
+                    </button>
+
                     <h3>or</h3>
                     {/* <input
                         type="text"
@@ -73,12 +75,12 @@ const Login = () => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                     <a href="#">Forgot Password?</a>
-                    <button onClick={handleLogin}>Login</button>
+                    <button onClick={handleLogin} style={{ backgroundColor: ' #2F2E41', color: '#fff', border: 'none', padding: '10px 20px', borderRadius: 5 }}>Login</button>
                     {/* {errorMessage &&
                      <p>{errorMessage}</p>} */}
                     <div>
                         <span>Not registered yet?</span>
-                        <button onClick={handleLoginButtonClick2}>Register</button>
+                        <button onClick={handleLoginButtonClick2} style={{marginLeft:10}}>Create on Account</button>
                     </div>
                 </form>
             </div>
