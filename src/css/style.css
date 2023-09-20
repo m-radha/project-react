@@ -10,29 +10,37 @@ nav {
 a {
     margin-right: 5%;
     text-decoration: none;
+    margin-top: 15px;
 }
 
 a:hover {
     text-decoration: underline;
 }
-
+.nav{
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 .nav-span {
-    margin-left: 3%;
+    margin-left: 10%;
     margin-right: 10%;
     font-weight: 700;
-}
-
-.icon {
     margin-top: 15px;
 }
 
+.icon {
+    margin-top: 10px;
+    margin-right: 15px;
+
+}
+
 .nav-button {
-    width: 15%;
     background-color: #2F2E41;
     color: white;
     border-radius: 5px;
-    margin: 10px 1px 10px 100px;
     PADDING: 10px;
+    margin-right: 10%;
+    margin-left: 10%;
 }
 
 .left-box {
@@ -40,7 +48,7 @@ a:hover {
     position: absolute;
     top: 20%;
     color: white;
-    width: 50%;
+    width: 35%;
     margin-left: 20px;
 }
 
@@ -50,6 +58,8 @@ a:hover {
 
 .p-tag {
     font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 form {
@@ -158,18 +168,10 @@ h2 {
     padding: 20px 20px;
 }
 
-hr {
-    margin-left: 2%;
-    margin-right: 10%;
-}
-
-h1 {
-    margin-left: 2%;
-}
 
 .new-Article button {
     width: 22%;
-    margin-left: 33%;
+    margin-left: 39%;
     background-color: #2F2E41;
     color: white;
     padding: 10px 10px;

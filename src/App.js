@@ -1,11 +1,13 @@
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import { Posts } from './assets/local-storage/local-storage';
 import { SampleArt } from "./assets/local-storage/local-storage2";
-import Home from "./components/Home";
-import Register from './components/Register';
-import Login from './components/Login';
-import Article from "./components/Article";
+import Home from './components/home/Home';
+import Register from './components/register/Register';
+import Login from './components/login/Login';
+import Article from "./components/Article/Article";
+
+
 
 function App() {
   return (

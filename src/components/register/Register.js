@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import './style.css';
-import RegImg from '../Images/RegImg.png';
-import { useNavigate } from "react-router-dom";
-import GooglIcon from '../Images/icons8-google.svg';
-
+import '../../css/style.css';
+import RegImg from '../../assets/Images/RegImg.png';
+import { useNavigate, Link } from "react-router-dom";
+import GooglIcon from '../../assets/Images/icons8-google.svg';
 const Register = () => {
   const navigate = useNavigate();
-  const handleLoginButtonClick1 = () => {
-    navigate('/login');
-  };
+  // const handleLoginButtonClick1 = () => {
+  //   navigate('/login');
+  // };
 
   const [username, setUsername] = useState('');
   const [email, SetUserEmail] = useState('');
@@ -212,10 +211,11 @@ const Register = () => {
                         <img src={GooglIcon} alt="Sign in with Google" style={{height:20,marginRight:5}}/>
                         Sign in with Google
                     </button> */}
-          <button style={{ display: 'flex', alignItems: 'center', padding: '5px 10px', borderRadius: 5 }}><img src={GooglIcon} alt="Sign in with Google" style={{ height: 20, marginRight: 5, marginLeft: 25 }} />Sign in with Google</button>
+          <button style={{ display: 'flex', alignItems: 'center', padding: '5px 10px', borderRadius: 5 }}><img src={GooglIcon} alt="Sign in with Google" style={{ height: 20, marginRight: 5, marginLeft: 50 }} />Sign in with Google</button>
           <div>
-            <span>Already have on account?</span>
-            <button onClick={handleLoginButtonClick1} style={{ marginLeft: 10 }}>Login</button>
+            <span style={{marginRight:0}}>Already have on account?</span>
+            {/* <button onClick={handleLoginButtonClick1} style={{ marginLeft: 10 }}>Login</button> */}
+            <Link to="/login"><b style={{marginLeft:5}}>Login</b></Link>
           </div>
         </form>
       </div>

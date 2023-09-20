@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import './style.css';
-import LoginImg from '../Images/LoginImg.png';
-import { useNavigate } from "react-router-dom";
-import GooglIcon from '../Images/icons8-google.svg';
+import '../../css/style.css';
+import LoginImg from '../../assets/Images/LoginImg.png';
+import { useNavigate, Link } from "react-router-dom";
+import GooglIcon from '../../assets/Images/icons8-google.svg';
 const Login = () => {
 
     const navigate = useNavigate();
-    const handleLoginButtonClick2 = () => {
-        navigate('/register');
-    };
+    // const handleLoginButtonClick2 = () => {
+    //     navigate('/register');
+    // };
 
     // const [username, setUsername] = useState('');
     const [email, SetUserEmail] = useState('');
@@ -41,13 +41,14 @@ const Login = () => {
                 <p className='text1-bottom'>The Ancient city of Rome and the history of the great city.</p>
                 <p className='text2-bottom'>Olive Junior</p>
                 <p className='text3-bottom'>Lead Writer, SkillupAfrica</p>
+
             </div>
             <div className='form-cls'>
                 <h2>Welcome Back!</h2>
                 <p>Welcome back, please enter your details</p>
                 <form >
                     <button style={{ display: 'flex', alignItems: 'center',padding:'5px 10px',borderRadius:5}}>
-                        <img src={GooglIcon} alt="Sign in with Google" style={{height:20,marginRight:5,marginLeft:25}}/>
+                        <img src={GooglIcon} alt="Sign in with Google" style={{height:20,marginRight:5,marginLeft:50}}/>
                         Sign in with Google
                     </button>
 
@@ -74,13 +75,14 @@ const Login = () => {
                         required
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    <a href="#">Forgot Password?</a>
+                    <Link to="#" style={{marginLeft:140}}>Forgot Password?</Link>
                     <button onClick={handleLogin} style={{ backgroundColor: ' #2F2E41', color: '#fff', border: 'none', padding: '10px 20px', borderRadius: 5 }}>Login</button>
                     {/* {errorMessage &&
                      <p>{errorMessage}</p>} */}
                     <div>
-                        <span>Not registered yet?</span>
-                        <button onClick={handleLoginButtonClick2} style={{marginLeft:10}}>Create on Account</button>
+                        <span style={{marginRight:0}}>Not registered yet?</span>
+                        {/* <button onClick={handleLoginButtonClick2} style={{marginLeft:10}}>Create on Account</button> */}
+                        <Link to="/register"><b style={{marginLeft:5}}>Create an Account</b></Link>
                     </div>
                 </form>
             </div>

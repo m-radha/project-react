@@ -15,7 +15,8 @@ export function Posts() {
       id: "2",
       title: "Reprehenderit est deserunt velit ipsam similique qui ",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis urna imperdiet netus nibh at fermentum mattis. Amet adipiscing",
+        "Lorem ipsum dolor sit amet, consas asd as lorem as aas asdkansdkas askdlkas"+
+        "ectetur adipiscing elit. Iaculis urna imperdiet netus nibh at fermentum mattis. Amet adipiscing",
       date: "2, Oct. 2022",
       content:
         "The fact of the matter is that although you may have numerous valid facts or descriptions related to your paragraph’s core idea, you may lose a reader’s attention if your paragraphs are too long. What’s more, if all of your paragraphs are long, you may lose opportunities to draw your reader in. Journalists, for example, know that their readers respond better to short paragraphs. News readers generally lose interest with long descriptions and even one-sentence paragraphs are considered both acceptable and impactful.",

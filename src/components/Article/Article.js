@@ -3,9 +3,9 @@ import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import profile_icon from '../Images/profile_icon.png';
-import '../components/style.css';
-import ArticleImg from '../Images/ArticleImg.png';
+import profileIcon from '../../assets/Images/profile_icon.png';
+import '../../css/style.css';
+import ArticleImg from '../../assets/Images/ArticleImg.png';
 import { Box, Grid } from '@mui/material';
 
 const Article = () => {
@@ -26,7 +26,7 @@ const Article = () => {
                 <button className='nav-button'>Post your article</button>
             </div><hr></hr>
             <div className='header'>
-                <img src={profile_icon} alt='profile_icon' id='profile_icon'></img>
+                <img src={profileIcon} alt='profile_icon' id='profile_icon'></img>
                 <p style={{ marginLeft: 10 }}>Oluwatemi Gabiel</p>
                 <button className='share' style={{ marginLeft: 600 }}>share<img src='https://www.svgrepo.com/download/13662/share.svg' id='share'></img></button>
             </div>
