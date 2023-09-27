@@ -8,10 +8,19 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import picture1 from '../../assets/Images/picture1.png';
 import { Link } from 'react-router-dom';
 import Form from '../Form/Form';
-
-
+import {cat, data} from '../../assets/local-storage/local-storage'
 
 const Home = () => {
+
+  const articleData = (localStorage.getItem("articles") || null);
+  if (!articleData) {
+    localStorage.setItem("articles", JSON.stringify(data));
+  }
+
+  const articleCat = (localStorage.getItem("catogories") || null);
+  if(!articleCat){
+    localStorage.setItem("catogories",JSON.stringify(cat));
+  }
 
   const [popup, setpopup] = useState(false);
 
@@ -23,11 +32,9 @@ const Home = () => {
     setpopup(false);
   }
 
-
-  var article = JSON.parse(localStorage.getItem("articles") || "{}");
-  console.log(article);
-  const art1 = article.slice(24,32);
-  const art2 = article.slice(6, 12);
+  const article = JSON.parse(localStorage.getItem("articles") || "{}");
+  const art1 = article.slice(0,5);
+  const art2 = article.slice(5, 11);
   return (
     <div style={{ overflowX: 'hidden' }}>
       <div className='nav'>
@@ -67,9 +74,10 @@ const Home = () => {
                   <Box
                     style={{
                       height: "320px",
-                      backgroundImage: `url(${item.url})`,
+                      backgroundImage: `url(${item.imageUrl})`,
                       backgroundPosition: "center",
                       backgroundSize: "cover",
+                      borderRadius: 15
                     }}
                   />
                   <p>{item.date}</p>
@@ -95,9 +103,10 @@ const Home = () => {
                   <Box
                     style={{
                       height: "320px",
-                      backgroundImage: `url(${item.url})`,
+                      backgroundImage: `url(${item.imageUrl})`,
                       backgroundPosition: "center",
                       backgroundSize: "cover",
+                      borderRadius: 15
                     }}
                   />
                   <p>{item.date}</p>

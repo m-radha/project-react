@@ -18,7 +18,7 @@ const Form = ({ onClose }) => {
     {
       id: '',
       title: '',
-      url: '',
+      imageUrl: '',
       description: '',
       date: formattedDateTime
     });
@@ -52,7 +52,7 @@ const Form = ({ onClose }) => {
 
           <input type='number' name='id' value={formData.id} placeholder="id" onChange={handleInputChange} />
           <input type="text" name="title" value={formData.title} onChange={handleInputChange} placeholder='title' required />
-          <input type="url" name="url" value={formData.imgUrl} onChange={handleInputChange} placeholder='Image url' required />
+          <input type="url" name="imageUrl" value={formData.imgUrl} onChange={handleInputChange} placeholder='Image url' required />
           <textarea name="description" value={formData.description} onChange={handleInputChange} placeholder='content' style={{ height: 200 }}></textarea>
           <button type="submit" className='nav-button'>post</button>
         </form>
