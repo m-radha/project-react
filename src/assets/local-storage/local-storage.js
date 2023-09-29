@@ -2,7 +2,7 @@ export const data = [
 
   {
 
-    "id": '1',
+    "id": 1,
 
     "title": "The Art of Productive Work From Home",
 
@@ -20,7 +20,7 @@ export const data = [
 
   {
 
-    "id": '2',
+    "id": 2,
 
     "title": "Exploring the Wonders of Underwater Photography",
 
@@ -37,7 +37,7 @@ export const data = [
 
   {
 
-    "id": '3',
+    "id": 3,
 
     "title": "A Beginner's Guide to Gardening",
 
@@ -55,7 +55,7 @@ export const data = [
 
   {
 
-    "id": '4',
+    "id": 4,
 
     "title": "The Science of Climate Change: A Comprehensive Overview",
 
@@ -73,7 +73,7 @@ export const data = [
 
   {
 
-    "id": '5',
+    "id": 5,
 
     "title": "Delicious and Healthy Smoothie Recipes",
 
@@ -91,7 +91,7 @@ export const data = [
 
   {
 
-    "id": '6',
+    "id": 6,
 
     "title": "Traveling on a Budget: Tips and Tricks",
 
@@ -109,7 +109,7 @@ export const data = [
 
   {
 
-    "id": '7',
+    "id": 7,
 
     "title": "The History of Space Exploration",
 
@@ -127,7 +127,7 @@ export const data = [
 
   {
 
-    "id": '8',
+    "id": 8,
 
     "title": "Tips for Effective Time Management",
 
@@ -145,7 +145,7 @@ export const data = [
 
   {
 
-    "id": '9',
+    "id": 9,
 
     "title": "The Beauty of Minimalist Design",
 
@@ -163,7 +163,7 @@ export const data = [
 
   {
 
-    "id": '10',
+    "id": 10,
 
     "title": "Healthy Eating: A Journey to Better Nutrition",
 

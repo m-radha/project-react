@@ -215,3 +215,19 @@ li{
 .article{
     justify-content:space-around;
 }
+
+button, a {
+    cursor: pointer;
+  }
+.art-img{
+    height: 200px;
+    width: 90%;
+    margin: 0px 60px 0px 60px ;
+}
+.limited-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+  }
